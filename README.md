@@ -175,6 +175,6 @@ If you use UrbanSeg in your research, please cite:
 @software{urbanseg,
   title = {UrbanSeg: Urban Remote Sensing Semantic Segmentation},
   year = {2025},
-  url = {https://github.com/<your-username>/UrbanSeg}
+  url = {https://github.com/hmbbsett/UrbanSegNet}
 }
 ```
