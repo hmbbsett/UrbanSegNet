@@ -208,7 +208,7 @@ def flops_selective_scan_ref(B=1, L=256, D=768, N=16, with_D=True, with_Z=False,
         flops += B * D * L  
     return flops
 
-def selective_scan_flop_jit(inputs, outputs, backend="prefixsum", verbose=True):
+def selective_scan_flop_jit(inputs, outputs, backend="prefixsum", verbose=False):
     if verbose:
         print_jit_input_names(inputs)
     flops_fn = flops_selective_scan_ref if backend == "naive" else flops_selective_scan_fn
