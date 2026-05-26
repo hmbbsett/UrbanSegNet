@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# IDE
+.idea/
+
+# Project-specific excludes
+论文用/
+weights/
+*.pth
+*.ckpt
+logs/
+results/
+.data/
+*.tif
+
+# OS
+.DS_Store
+Thumbs.db
+.claude/
+.claude/
