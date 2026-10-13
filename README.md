@@ -1,180 +1,66 @@
-# UrbanSeg: Urban Remote Sensing Semantic Segmentation
+# UrbanSegNet / CHRUC-2024
 
-UrbanSeg is a semantic segmentation model for high-resolution urban satellite imagery. It classifies each pixel into one of 9 land-cover categories using a hybrid architecture combining **DINOv3 (Vision Transformer)** with **Mamba State Space Models (SSM)** and a lightweight CNN decoder.
+Urban land-cover segmentation with DINOv3 ViT-L/16, LoRA, three MRDB blocks and confidence-filtered pseudo-labels.
 
-## Land-Cover Classes
+## Classes
 
-| Index | Class      | Color          |
-|-------|------------|----------------|
-| 0     | Background | Black          |
-| 1     | Tree       | Forest Green   |
-| 2     | Grass      | Green          |
-| 3     | Soil       | Brown          |
-| 4     | OISA*      | Gray           |
-| 5     | Water      | Blue           |
-| 6     | Building   | Red            |
-| 7     | Road       | Yellow         |
-| 8     | Crop       | Orange         |
+1 Trees · 2 Grass/Shrub · 3 Soil · 4 OISAs · 5 Water · 6 Buildings · 7 Roads · 8 Agriculture.
+Code 0 denotes background/no data; 255 is the cross-entropy ignore code.
 
-*OISA = Other Impervious Surface Area
+## Setup
 
-## Architecture
-
-```
-Input RGB Image
-    │
-    ▼
-DINOv3 ViT-L/16 (frozen backbone + LoRA adapters)
-    │
-    ▼
-3× Mamba Decoder Blocks (SS2D + Multi-Kernel Depthwise Conv + FFN)
-    │
-    ▼
-Upsampling + Segmentation Head → Pixel-wise predictions
-```
-
-- **Encoder**: DINOv3 ViT-L/16 pretrained on satellite imagery (SAT493M), fine-tuned with LoRA
-- **Decoder**: Lightweight MobileMamba blocks with 2D Selective Scan SSM
-- **Loss**: Combined Cross-Entropy + Dice loss with class weights and self-cleansing
-
-## Directory Structure
-
-```
-UrbanSeg/
-├── config.py              # YACS-based configuration
-├── dataset.py             # Data loading & augmentation
-├── train.py               # Training script (PyTorch Lightning)
-├── inference.py           # Large-TIFF inference with sliding window
-├── models/
-│   ├── encoder.py         # DINOv3 encoder with LoRA
-│   ├── mamba_core.py      # 2D Mamba SSM (SS2D)
-│   ├── csm_triton.py      # Cross-scan/merge (Triton kernels)
-│   ├── model_main.py      # Full UrbanSeg model
-│   └── ...
-├── dinov3/                # Vendored DINOv3 library (Meta)
-├── tools/
-│   ├── cfg.py             # Config utilities
-│   └── metric.py          # Evaluation metrics
-└── weights/               # Pretrained weights (download separately)
-```
-
-## Installation
+Python 3.10; PyTorch 2.1.1 with CUDA 11.8. See `environment.json` for the reported server environment.
 
 ```bash
+pip install torch==2.1.1 torchvision==0.16.1 --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
 ```
 
-For GPU-accelerated selective scan kernels (optional but recommended):
+Install Triton and any selective-scan CUDA extension for your platform separately. The reported environment uses Triton 3.3.0; Windows needs a compatible build.
+
+## Weights
+
+Place the final `last.ckpt` in `weights/`. SHA256:
+`a2f3a84766fb2cd59bf8e2c3d374cfec2aa4dfa0b33d50216b51359e203452f0`.
+The final checkpoint download link is pending public upload.
+
+For training from scratch, obtain `dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth` from [Meta DINOv3](https://github.com/facebookresearch/dinov3) and place it in `weights/`.
+It is not redistributed here. For inference, the complete final checkpoint supplies the backbone and LoRA parameters.
+
+## Train
+
+Set the training data path in `config.py`, then run from the repository root:
 
 ```bash
-pip install triton
-# selective-scan-cuda may need to be built from source
+python train.py --name abl_4city --cities Beijing,Guangzhou,Wuhan,Hohhot --encoder dinov3 --tau 0.4 --lambda_aux 0.4
 ```
 
-## Data Preparation
+Training uses 1024×1024 tiles, eight epochs, batch size 4 and gradient accumulation 8.
 
-Organize your data as follows:
+## Evaluate
 
-```
-<data_root>/
-├── images/
-│   ├── train/
-│   │   ├── image_001.png
-│   │   └── ...
-│   └── val/
-│       └── ...
-└── labels/
-    ├── train/
-    │   ├── image_001.png
-    │   └── ...
-    └── val/
-        └── ...
-```
-
-- Images: RGB, any resolution (resized to `IMG_SIZE` during training)
-- Labels: Single-channel PNG with integer class indices (0-8, 255 for ignore)
-
-Update `config.py` or use `-c` to point to your data root:
-
-```python
-_C.DATA.DATA_PATH = './data/Provincial_Capital'
-```
-
-## Pretrained Weights
-
-The DINOv3 encoder requires pretrained weights. Download the **SAT493M** checkpoint:
+Set `MOSAIC_DIR` in `tools/inference_validate.py`. Put fixed 100×100 reference labels in `<reference_root>/crop_100_masks/`.
 
 ```bash
-mkdir -p weights
-# Download dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth into weights/
+python tools/inference_validate.py --ckpt weights/last.ckpt --name chruc_30cities --kept_txt evaluation/lists/validation_30cities.txt --gt_dir data/reference --gt_source crop100 --no_guiyang --batch 8
+python tools/inference_validate.py --ckpt weights/last.ckpt --name chruc_guiyang --kept_txt evaluation/lists/validation_guiyang.txt --gt_dir data/reference_guiyang --gt_source crop100 --no_guiyang --batch 8
 ```
 
-The download URL can be found in the [DINOv3 repository](https://github.com/facebookresearch/dinov3).
+The 2090-patch, 30-city paper result is OA 84.06% and pooled eight-class mIoU 71.62%.
+Evaluation uses a 1536×1536 context window and the central 100×100 reference area.
 
-## Training
+## Map cities
 
-Edit `config.py` to set your data path and hyperparameters, then run:
+Set `MOSAIC_DIR`, `OUTPUT_DIR`, `CKPT_PATH` and `CITIES` in `inference.py`, then run:
 
 ```bash
-python train.py
+python inference.py
 ```
 
-To use a custom config file:
+Production uses 1536×1536 inputs, 1024×1024 output tiles, stride 768 and Gaussian blending. Output is a single-band UInt8 GeoTIFF.
 
-```bash
-python train.py -c path/to/your_config.py
-```
+## Data and licenses
 
-Resume from a checkpoint:
-
-```bash
-python train.py -r logs/UrbanSeg_DINOv3_Turbo/version_0/checkpoints/last.ckpt
-```
-
-### Key Configuration
-
-| Parameter | Default | Description |
-|-----------|---------|-------------|
-| `DATA.DATA_PATH` | `./data/Provincial_Capital` | Path to dataset |
-| `DATA.IMG_SIZE` | 1024 | Input image size (square) |
-| `DATA.BATCH_SIZE` | 4 | Batch size per GPU |
-| `TRAIN.EPOCHS` | 8 | Number of training epochs |
-| `TRAIN.BASE_LR` | 2e-4 | Base learning rate |
-
-## Inference
-
-Run inference on large GeoTIFF files using a sliding window approach:
-
-```bash
-python inference.py \
-    --input-dir /path/to/tiff/files \
-    --output-dir /path/to/output \
-    --ckpt path/to/checkpoint.ckpt
-```
-
-Optional arguments:
-
-```bash
---window-size 1536   # Context window size (default: 1536)
---tile-size 1024     # Output tile size (default: 1024)
---padding 256        # Padding to avoid edge artifacts (default: 256)
---batch-size 4       # Batch size for inference (default: 4)
-```
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
-
-The `dinov3/` directory contains third-party code from Meta Platforms, Inc., which is governed by its own license. See the copyright headers in those files.
-
-## Citation
-
-If you use UrbanSeg in your research, please cite:
-
-```bibtex
-@software{urbanseg,
-  title = {UrbanSeg: Urban Remote Sensing Semantic Segmentation},
-  year = {2025},
-  url = {https://github.com/hmbbsett/UrbanSegNet}
-}
-```
+The previous data version is at [Zenodo](https://zenodo.org/records/19510248); the revised version is being uploaded.
+Source imagery is obtained separately from [Jilin-1](https://www.jl1mall.com/).
+See `LICENSE`, `NOTICE` and `licenses/` for code and third-party terms.

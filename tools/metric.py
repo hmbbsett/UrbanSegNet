@@ -1,18 +1,18 @@
 import numpy as np
 
-
 class Evaluator(object):
+
     def __init__(self, num_class):
         self.num_class = num_class
         self.confusion_matrix = np.zeros((self.num_class,) * 2)
-        self.eps = 1e-8
+        self.eps = 1e-08
 
     def get_tp_fp_tn_fn(self):
         tp = np.diag(self.confusion_matrix)
         fp = self.confusion_matrix.sum(axis=0) - np.diag(self.confusion_matrix)
         fn = self.confusion_matrix.sum(axis=1) - np.diag(self.confusion_matrix)
         tn = np.diag(self.confusion_matrix).sum() - np.diag(self.confusion_matrix)
-        return tp, fp, tn, fn
+        return (tp, fp, tn, fn)
 
     def Precision(self):
         tp, fp, tn, fn = self.get_tp_fp_tn_fn()
@@ -28,7 +28,7 @@ class Evaluator(object):
         tp, fp, tn, fn = self.get_tp_fp_tn_fn()
         Precision = tp / (tp + fp)
         Recall = tp / (tp + fn)
-        F1 = (2.0 * Precision * Recall) / (Precision + Recall)
+        F1 = 2.0 * Precision * Recall / (Precision + Recall)
         return F1
 
     def OA(self):
@@ -42,11 +42,10 @@ class Evaluator(object):
 
     def Dice(self):
         tp, fp, tn, fn = self.get_tp_fp_tn_fn()
-        Dice = 2 * tp / ((tp + fp) + (tp + fn))
+        Dice = 2 * tp / (tp + fp + (tp + fn))
         return Dice
 
     def Pixel_Accuracy_Class(self):
-        #         TP                                  TP+FP
         Acc = np.diag(self.confusion_matrix) / (self.confusion_matrix.sum(axis=0) + self.eps)
         return Acc
 
@@ -64,24 +63,14 @@ class Evaluator(object):
         return confusion_matrix
 
     def add_batch(self, gt_image, pre_image):
-        assert gt_image.shape == pre_image.shape, 'pre_image shape {}, gt_image shape {}'.format(pre_image.shape,
-                                                                                                 gt_image.shape)
+        assert gt_image.shape == pre_image.shape, 'pre_image shape {}, gt_image shape {}'.format(pre_image.shape, gt_image.shape)
         self.confusion_matrix += self._generate_matrix(gt_image, pre_image)
 
     def reset(self):
         self.confusion_matrix = np.zeros((self.num_class,) * 2)
-
-
 if __name__ == '__main__':
-
-    gt = np.array([[0, 2, 1],
-                   [1, 2, 1],
-                   [1, 0, 1]])
-
-    pre = np.array([[0, 1, 1],
-                   [2, 0, 1],
-                   [1, 1, 1]])
-
+    gt = np.array([[0, 2, 1], [1, 2, 1], [1, 0, 1]])
+    pre = np.array([[0, 1, 1], [2, 0, 1], [1, 1, 1]])
     eval = Evaluator(num_class=3)
     eval.add_batch(gt, pre)
     print(eval.confusion_matrix)
