@@ -22,7 +22,7 @@ Install Triton and any selective-scan CUDA extension for your platform separatel
 
 Place the final `last.ckpt` in `weights/`. SHA256:
 `a2f3a84766fb2cd59bf8e2c3d374cfec2aa4dfa0b33d50216b51359e203452f0`.
-The final checkpoint download link is pending public upload.
+Download [`last.ckpt` and its accompanying licences](https://github.com/hmbbsett/UrbanSegNet/releases/tag/chruc-2024-v1.0). The complete DINO-derived checkpoint is distributed under the accompanying DINOv3 License.
 
 For training from scratch, obtain `dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth` from [Meta DINOv3](https://github.com/facebookresearch/dinov3) and place it in `weights/`.
 It is not redistributed here. For inference, the complete final checkpoint supplies the backbone and LoRA parameters.
@@ -61,7 +61,7 @@ Production uses 1536×1536 inputs, 1024×1024 output tiles, stride 768 and Gauss
 
 ## Data and licenses
 
-The revised 31-city product is available from [Figshare](https://doi.org/10.6084/m9.figshare.34436772.v1) under CC BY 4.0.
+The revised 31-city product and 2360 manual 100×100 reference masks are available from [Figshare](https://doi.org/10.6084/m9.figshare.34436772.v2) under CC BY 4.0.
 The earlier version remains at [Zenodo](https://zenodo.org/records/19510248).
 Source imagery is obtained separately from [Jilin-1](https://www.jl1mall.com/).
 See `LICENSE`, `NOTICE` and `licenses/` for code and third-party terms.
