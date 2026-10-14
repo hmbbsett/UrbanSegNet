@@ -1,1 +1,67 @@
-IyBVcmJhblNlZ05ldCAvIENIUlVDLTIwMjQKClVyYmFuIGxhbmQtY292ZXIgc2VnbWVudGF0aW9uIHdpdGggRElOT3YzIFZpVC1MLzE2LCBMb1JBLCB0aHJlZSBNUkRCIGJsb2NrcyBhbmQgY29uZmlkZW5jZS1maWx0ZXJlZCBwc2V1ZG8tbGFiZWxzLgoKIyMgQ2xhc3NlcwoKMSBUcmVlcyDCtyAyIEdyYXNzL1NocnViIMK3IDMgU29pbCDCtyA0IE9JU0FzIMK3IDUgV2F0ZXIgwrcgNiBCdWlsZGluZ3MgwrcgNyBSb2FkcyDCtyA4IEFncmljdWx0dXJlLgpDb2RlIDAgZGVub3RlcyBiYWNrZ3JvdW5kL25vIGRhdGE7IDI1NSBpcyB0aGUgY3Jvc3MtZW50cm9weSBpZ25vcmUgY29kZS4KCiMjIFNldHVwCgpQeXRob24gMy4xMDsgUHlUb3JjaCAyLjEuMSB3aXRoIENVREEgMTEuOC4gU2VlIGBlbnZpcm9ubWVudC5qc29uYCBmb3IgdGhlIHJlcG9ydGVkIHNlcnZlciBlbnZpcm9ubWVudC4KCmBgYGJhc2gKcGlwIGluc3RhbGwgdG9yY2g9PTIuMS4xIHRvcmNodmlzaW9uPT0wLjE2LjEgLS1pbmRleC11cmwgaHR0cHM6Ly9kb3dubG9hZC5weXRvcmNoLm9yZy93aGwvY3UxMTgKcGlwIGluc3RhbGwgLXIgcmVxdWlyZW1lbnRzLnR4dApgYGAKCkluc3RhbGwgVHJpdG9uIGFuZCBhbnkgc2VsZWN0aXZlLXNjYW4gQ1VEQSBleHRlbnNpb24gZm9yIHlvdXIgcGxhdGZvcm0gc2VwYXJhdGVseS4gVGhlIHJlcG9ydGVkIGVudmlyb25tZW50IHVzZXMgVHJpdG9uIDMuMy4wOyBXaW5kb3dzIG5lZWRzIGEgY29tcGF0aWJsZSBidWlsZC4KCiMjIFdlaWdodHMKClBsYWNlIHRoZSBmaW5hbCBgbGFzdC5ja3B0YCBpbiBgd2VpZ2h0cy9gLiBTSEEyNTY6CmBhMmYzYTg0NzY2ZmIyY2Q1OWJmOGUyYzNkMzc0Y2ZlYzJhYTRkZmEwYjMzZDUwMjE2YjUxMzU5ZTIwMzQ1MmYwYC4KVGhlIGZpbmFsIGNoZWNrcG9pbnQgZG93bmxvYWQgbGluayBpcyBwZW5kaW5nIHB1YmxpYyB1cGxvYWQuCgpGb3IgdHJhaW5pbmcgZnJvbSBzY3JhdGNoLCBvYnRhaW4gYGRpbm92M192aXRsMTZfcHJldHJhaW5fc2F0NDkzbS1lYWRjZjBmZi5wdGhgIGZyb20gW01ldGEgRElOT3YzXShodHRwczovL2dpdGh1Yi5jb20vZmFjZWJvb2tyZXNlYXJjaC9kaW5vdjMpIGFuZCBwbGFjZSBpdCBpbiBgd2VpZ2h0cy9gLgpJdCBpcyBub3QgcmVkaXN0cmlidXRlZCBoZXJlLiBGb3IgaW5mZXJlbmNlLCB0aGUgY29tcGxldGUgZmluYWwgY2hlY2twb2ludCBzdXBwbGllcyB0aGUgYmFja2JvbmUgYW5kIExvUkEgcGFyYW1ldGVycy4KCiMjIFRyYWluCgpTZXQgdGhlIHRyYWluaW5nIGRhdGEgcGF0aCBpbiBgY29uZmlnLnB5YCwgdGhlbiBydW4gZnJvbSB0aGUgcmVwb3NpdG9yeSByb290OgoKYGBgYmFzaApweXRob24gdHJhaW4ucHkgLS1uYW1lIGFibF80Y2l0eSAtLWNpdGllcyBCZWlqaW5nLEd1YW5nemhvdSxXdWhhbixIb2hob3QgLS1lbmNvZGVyIGRpbm92MyAtLXRhdSAwLjQgLS1sYW1iZGFfYXV4IDAuNApgYGAKClRyYWluaW5nIHVzZXMgMTAyNMOXMTAyNCB0aWxlcywgZWlnaHQgZXBvY2hzLCBiYXRjaCBzaXplIDQgYW5kIGdyYWRpZW50IGFjY3VtdWxhdGlvbiA4LgoKIyMgRXZhbHVhdGUKClNldCBgTU9TQUlDX0RJUmAgaW4gYHRvb2xzL2luZmVyZW5jZV92YWxpZGF0ZS5weWAuIFB1dCBmaXhlZCAxMDDDlzEwMCByZWZlcmVuY2UgbGFiZWxzIGluIGA8cmVmZXJlbmNlX3Jvb3Q+L2Nyb3BfMTAwX21hc2tzL2AuCgpgYGBiYXNoCnB5dGhvbiB0b29scy9pbmZlcmVuY2VfdmFsaWRhdGUucHkgLS1ja3B0IHdlaWdodHMvbGFzdC5ja3B0IC0tbmFtZSBjaHJ1Y18zMGNpdGllcyAtLWtlcHRfdHh0IGV2YWx1YXRpb24vbGlzdHMvdmFsaWRhdGlvbl8zMGNpdGllcy50eHQgLS1ndF9kaXIgZGF0YS9yZWZlcmVuY2UgLS1ndF9zb3VyY2UgY3JvcDEwMCAtLW5vX2d1aXlhbmcgLS1iYXRjaCA4CnB5dGhvbiB0b29scy9pbmZlcmVuY2VfdmFsaWRhdGUucHkgLS1ja3B0IHdlaWdodHMvbGFzdC5ja3B0IC0tbmFtZSBjaHJ1Y19ndWl5YW5nIC0ta2VwdF90eHQgZXZhbHVhdGlvbi9saXN0cy92YWxpZGF0aW9uX2d1aXlhbmcudHh0IC0tZ3RfZGlyIGRhdGEvcmVmZXJlbmNlX2d1aXlhbmcgLS1ndF9zb3VyY2UgY3JvcDEwMCAtLW5vX2d1aXlhbmcgLS1iYXRjaCA4CmBgYAoKVGhlIDIwOTAtcGF0Y2gsIDMwLWNpdHkgcGFwZXIgcmVzdWx0IGlzIE9BIDg0LjA2JSBhbmQgcG9vbGVkIGVpZ2h0LWNsYXNzIG1Jb1UgNzEuNjIlLgpFdmFsdWF0aW9uIHVzZXMgYSAxNTM2w5cxNTM2IGNvbnRleHQgd2luZG93IGFuZCB0aGUgY2VudHJhbCAxMDDDlzEwMCByZWZlcmVuY2UgYXJlYS4KCiMjIE1hcCBjaXRpZXMKClNldCBgTU9TQUlDX0RJUmAsIGBPVVRQVVRfRElSYCwgYENLUFRfUEFUSGAgYW5kIGBDSVRJRVNgIGluIGBpbmZlcmVuY2UucHlgLCB0aGVuIHJ1bjoKCmBgYGJhc2gKcHl0aG9uIGluZmVyZW5jZS5weQpgYGAKClByb2R1Y3Rpb24gdXNlcyAxNTM2w5cxNTM2IGlucHV0cywgMTAyNMOXMTAyNCBvdXRwdXQgdGlsZXMsIHN0cmlkZSA3NjggYW5kIEdhdXNzaWFuIGJsZW5kaW5nLiBPdXRwdXQgaXMgYSBzaW5nbGUtYmFuZCBVSW50OCBHZW9USUZGLgoKIyMgRGF0YSBhbmQgbGljZW5zZXMKClRoZSByZXZpc2VkIDMxLWNpdHkgcHJvZHVjdCBpcyBhdmFpbGFibGUgZnJvbSBbRmlnc2hhcmVdKGh0dHBzOi8vZG9pLm9yZy8xMC42MDg0L205LmZpZ3NoYXJlLjM0NDM2NzcyLnYxKSB1bmRlciBDQyBCWSA0LjAuClRoZSBlYXJsaWVyIHZlcnNpb24gcmVtYWlucyBhdCBbWmVub2RvXShodHRwczovL3plbm9kby5vcmcvcmVjb3Jkcy8xOTUxMDI0OCkuClNvdXJjZSBpbWFnZXJ5IGlzIG9idGFpbmVkIHNlcGFyYXRlbHkgZnJvbSBbSmlsaW4tMV0oaHR0cHM6Ly93d3cuamwxbWFsbC5jb20vKS4KU2VlIGBMSUNFTlNFYCwgYE5PVElDRWAgYW5kIGBsaWNlbnNlcy9gIGZvciBjb2RlIGFuZCB0aGlyZC1wYXJ0eSB0ZXJtcy4K
+# UrbanSegNet / CHRUC-2024
+
+Urban land-cover segmentation with DINOv3 ViT-L/16, LoRA, three MRDB blocks and confidence-filtered pseudo-labels.
+
+## Classes
+
+1 Trees · 2 Grass/Shrub · 3 Soil · 4 OISAs · 5 Water · 6 Buildings · 7 Roads · 8 Agriculture.
+Code 0 denotes background/no data; 255 is the cross-entropy ignore code.
+
+## Setup
+
+Python 3.10; PyTorch 2.1.1 with CUDA 11.8. See `environment.json` for the reported server environment.
+
+```bash
+pip install torch==2.1.1 torchvision==0.16.1 --index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements.txt
+```
+
+Install Triton and any selective-scan CUDA extension for your platform separately. The reported environment uses Triton 3.3.0; Windows needs a compatible build.
+
+## Weights
+
+Place the final `last.ckpt` in `weights/`. SHA256:
+`a2f3a84766fb2cd59bf8e2c3d374cfec2aa4dfa0b33d50216b51359e203452f0`.
+The final checkpoint download link is pending public upload.
+
+For training from scratch, obtain `dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth` from [Meta DINOv3](https://github.com/facebookresearch/dinov3) and place it in `weights/`.
+It is not redistributed here. For inference, the complete final checkpoint supplies the backbone and LoRA parameters.
+
+## Train
+
+Set the training data path in `config.py`, then run from the repository root:
+
+```bash
+python train.py --name abl_4city --cities Beijing,Guangzhou,Wuhan,Hohhot --encoder dinov3 --tau 0.4 --lambda_aux 0.4
+```
+
+Training uses 1024×1024 tiles, eight epochs, batch size 4 and gradient accumulation 8.
+
+## Evaluate
+
+Set `MOSAIC_DIR` in `tools/inference_validate.py`. Put fixed 100×100 reference labels in `<reference_root>/crop_100_masks/`.
+
+```bash
+python tools/inference_validate.py --ckpt weights/last.ckpt --name chruc_30cities --kept_txt evaluation/lists/validation_30cities.txt --gt_dir data/reference --gt_source crop100 --no_guiyang --batch 8
+python tools/inference_validate.py --ckpt weights/last.ckpt --name chruc_guiyang --kept_txt evaluation/lists/validation_guiyang.txt --gt_dir data/reference_guiyang --gt_source crop100 --no_guiyang --batch 8
+```
+
+The 2090-patch, 30-city paper result is OA 84.06% and pooled eight-class mIoU 71.62%.
+Evaluation uses a 1536×1536 context window and the central 100×100 reference area.
+
+## Map cities
+
+Set `MOSAIC_DIR`, `OUTPUT_DIR`, `CKPT_PATH` and `CITIES` in `inference.py`, then run:
+
+```bash
+python inference.py
+```
+
+Production uses 1536×1536 inputs, 1024×1024 output tiles, stride 768 and Gaussian blending. Output is a single-band UInt8 GeoTIFF.
+
+## Data and licenses
+
+The revised 31-city product is available from [Figshare](https://doi.org/10.6084/m9.figshare.34436772.v1) under CC BY 4.0.
+The earlier version remains at [Zenodo](https://zenodo.org/records/19510248).
+Source imagery is obtained separately from [Jilin-1](https://www.jl1mall.com/).
+See `LICENSE`, `NOTICE` and `licenses/` for code and third-party terms.
