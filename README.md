@@ -1,1 +1,66 @@
-IyBVcmJhblNlZ05ldCAvIENIUlVDLTIwMjQKClVyYmFuIGxhbmQtY292ZXIgc2VnbWVudGF0aW9uIHdpdGggRElOT3YzIFZpVC1MLzE2LCBMb1JBLCB0aHJlZSBNUkRCIGJsb2NrcyBhbmQgY29uZmlkZW5jZS1maWx0ZXJlZCBwc2V1ZG8tbGFiZWxzLgoKIyMgQ2xhc3NlcwoKMSBUcmVlcyDCtyAyIEdyYXNzL1NocnViIMK3IDMgU29pbCDCtyA0IE9JU0FzIMK3IDUgV2F0ZXIgwrcgNiBCdWlsZGluZ3MgwrcgNyBSb2FkcyDCtyA4IEFncmljdWx0dXJlLgpDb2RlIDAgZGVub3RlcyBiYWNrZ3JvdW5kL25vIGRhdGE7IDI1NSBpcyB0aGUgY3Jvc3MtZW50cm9weSBpZ25vcmUgY29kZS4KCiMjIFNldHVwCgpQeXRob24gMy4xMDsgUHlUb3JjaCAyLjEuMSB3aXRoIENVREEgMTEuOC4gU2VlIGBlbnZpcm9ubWVudC5qc29uYCBmb3IgdGhlIHJlcG9ydGVkIHNlcnZlciBlbnZpcm9ubWVudC4KCmBgYGJhc2gKcGlwIGluc3RhbGwgdG9yY2g9PTIuMS4xIHRvcmNodmlzaW9uPT0wLjE2LjEgLS1pbmRleC11cmwgaHR0cHM6Ly9kb3dubG9hZC5weXRvcmNoLm9yZy93aGwvY3UxMTgKcGlwIGluc3RhbGwgLXIgcmVxdWlyZW1lbnRzLnR4dApgYGAKCkluc3RhbGwgVHJpdG9uIGFuZCBhbnkgc2VsZWN0aXZlLXNjYW4gQ1VEQSBleHRlbnNpb24gZm9yIHlvdXIgcGxhdGZvcm0gc2VwYXJhdGVseS4gVGhlIHJlcG9ydGVkIGVudmlyb25tZW50IHVzZXMgVHJpdG9uIDMuMy4wOyBXaW5kb3dzIG5lZWRzIGEgY29tcGF0aWJsZSBidWlsZC4KCiMjIFdlaWdodHMKClBsYWNlIHRoZSBmaW5hbCBgbGFzdC5ja3B0YCBpbiBgd2VpZ2h0cy9gLiBTSEEyNTY6CmBhMmYzYTg0NzY2ZmIyY2Q1OWJmOGUyYzNkMzc0Y2ZlYzJhYTRkZmEwYjMzZDUwMjE2YjUxMzU5ZTIwMzQ1MmYwYC4KRG93bmxvYWQgW2BsYXN0LmNrcHRgIGFuZCBpdHMgYWNjb21wYW55aW5nIGxpY2VuY2VzXShodHRwczovL2dpdGh1Yi5jb20vaG1iYnNldHQvVXJiYW5TZWdOZXQvcmVsZWFzZXMvdGFnL2NocnVjLTIwMjQtdjEuMCkuIFRoZSBjb21wbGV0ZSBESU5PLWRlcml2ZWQgY2hlY2twb2ludCBpcyBkaXN0cmlidXRlZCB1bmRlciB0aGUgYWNjb21wYW55aW5nIERJTk92MyBMaWNlbnNlLgoKRm9yIHRyYWluaW5nIGZyb20gc2NyYXRjaCwgb2J0YWluIGBkaW5vdjNfdml0bDE2X3ByZXRyYWluX3NhdDQ5M20tZWFkY2YwZmYucHRoYCBmcm9tIFtNZXRhIERJTk92M10oaHR0cHM6Ly9naXRodWIuY29tL2ZhY2Vib29rcmVzZWFyY2gvZGlub3YzKSBhbmQgcGxhY2UgaXQgaW4gYHdlaWdodHMvYC4KSXQgaXMgbm90IHJlZGlzdHJpYnV0ZWQgaGVyZS4gRm9yIGluZmVyZW5jZSwgdGhlIGNvbXBsZXRlIGZpbmFsIGNoZWNrcG9pbnQgc3VwcGxpZXMgdGhlIGJhY2tib25lIGFuZCBMb1JBIHBhcmFtZXRlcnMuCgojIyBUcmFpbgoKU2V0IHRoZSB0cmFpbmluZyBkYXRhIHBhdGggaW4gYGNvbmZpZy5weWAsIHRoZW4gcnVuIGZyb20gdGhlIHJlcG9zaXRvcnkgcm9vdDoKCmBgYGJhc2gKcHl0aG9uIHRyYWluLnB5IC0tbmFtZSBhYmxfNGNpdHkgLS1jaXRpZXMgQmVpamluZyxHdWFuZ3pob3UsV3VoYW4sSG9oaG90IC0tZW5jb2RlciBkaW5vdjMgLS10YXUgMC40IC0tbGFtYmRhX2F1eCAwLjQKYGBgCgpUcmFpbmluZyB1c2VzIDEwMjTDlzEwMjQgdGlsZXMsIGVpZ2h0IGVwb2NocywgYmF0Y2ggc2l6ZSA0IGFuZCBncmFkaWVudCBhY2N1bXVsYXRpb24gOC4KCiMjIEV2YWx1YXRlCgpTZXQgYE1PU0FJQ19ESVJgIGluIGB0b29scy9pbmZlcmVuY2VfdmFsaWRhdGUucHlgLiBQdXQgZml4ZWQgMTAww5cxMDAgcmVmZXJlbmNlIGxhYmVscyBpbiBgPHJlZmVyZW5jZV9yb290Pi9jcm9wXzEwMF9tYXNrcy9gLgoKYGBgYmFzaApweXRob24gdG9vbHMvaW5mZXJlbmNlX3ZhbGlkYXRlLnB5IC0tY2twdCB3ZWlnaHRzL2xhc3QuY2twdCAtLW5hbWUgY2hydWNfMzBjaXRpZXMgLS1rZXB0X3R4dCBldmFsdWF0aW9uL2xpc3RzL3ZhbGlkYXRpb25fMzBjaXRpZXMudHh0IC0tZ3RfZGlyIGRhdGEvcmVmZXJlbmNlIC0tZ3Rfc291cmNlIGNyb3AxMDAgLS1ub19ndWl5YW5nIC0tYmF0Y2ggOApweXRob24gdG9vbHMvaW5mZXJlbmNlX3ZhbGlkYXRlLnB5IC0tY2twdCB3ZWlnaHRzL2xhc3QuY2twdCAtLW5hbWUgY2hydWNfZ3VpeWFuZyAtLWtlcHRfdHh0IGV2YWx1YXRpb24vbGlzdHMvdmFsaWRhdGlvbl9ndWl5YW5nLnR4dCAtLWd0X2RpciBkYXRhL3JlZmVyZW5jZV9ndWl5YW5nIC0tZ3Rfc291cmNlIGNyb3AxMDAgLS1ub19ndWl5YW5nIC0tYmF0Y2ggOApgYGAKClRoZSAyMDkwLXBhdGNoLCAzMC1jaXR5IHBhcGVyIHJlc3VsdCBpcyBPQSA4NC4wNiUgYW5kIHBvb2xlZCBlaWdodC1jbGFzcyBtSW9VIDcxLjYyJS4KRXZhbHVhdGlvbiB1c2VzIGEgMTUzNsOXMTUzNiBjb250ZXh0IHdpbmRvdyBhbmQgdGhlIGNlbnRyYWwgMTAww5cxMDAgcmVmZXJlbmNlIGFyZWEuCgojIyBNYXAgY2l0aWVzCgpTZXQgYE1PU0FJQ19ESVJgLCBgT1VUUFVUX0RJUmAsIGBDS1BUX1BBVEhgIGFuZCBgQ0lUSUVTYCBpbiBgaW5mZXJlbmNlLnB5YCwgdGhlbiBydW46CgpgYGBiYXNoCnB5dGhvbiBpbmZlcmVuY2UucHkKYGBgCgpQcm9kdWN0aW9uIHVzZXMgMTUzNsOXMTUzNiBpbnB1dHMsIDEwMjTDlzEwMjQgb3V0cHV0IHRpbGVzLCBzdHJpZGUgNzY4IGFuZCBHYXVzc2lhbiBibGVuZGluZy4gT3V0cHV0IGlzIGEgc2luZ2xlLWJhbmQgVUludDggR2VvVElGRi4KCiMjIERhdGEgYW5kIGxpY2Vuc2VzCgpUaGUgMzEtY2l0eSBwcm9kdWN0IGFuZCAyMzE0IG1hbnVhbCAxMDDDlzEwMCByZWZlcmVuY2UgbWFza3MgKDIwOTAgaW4gMzAgY2l0aWVzIGFuZCAyMjQgaW4gR3VpeWFuZykgYXJlIGF2YWlsYWJsZSBmcm9tIFtGaWdzaGFyZV0oaHR0cHM6Ly9kb2kub3JnLzEwLjYwODQvbTkuZmlnc2hhcmUuMzQ3NjQ5NDUpIHVuZGVyIENDIEJZIDQuMC4KU291cmNlIGltYWdlcnkgaXMgb2J0YWluZWQgc2VwYXJhdGVseSBmcm9tIFtKaWxpbi0xXShodHRwczovL3d3dy5qbDFtYWxsLmNvbS8pLgpTZWUgYExJQ0VOU0VgLCBgTk9USUNFYCBhbmQgYGxpY2Vuc2VzL2AgZm9yIGNvZGUgYW5kIHRoaXJkLXBhcnR5IHRlcm1zLgo=
+# UrbanSegNet / CHRUC-2024
+
+Urban land-cover segmentation with DINOv3 ViT-L/16, LoRA, three MRDB blocks and confidence-filtered pseudo-labels.
+
+## Classes
+
+1 Trees · 2 Grass/Shrub · 3 Soil · 4 OISAs · 5 Water · 6 Buildings · 7 Roads · 8 Agriculture.
+Code 0 denotes background/no data; 255 is the cross-entropy ignore code.
+
+## Setup
+
+Python 3.10; PyTorch 2.1.1 with CUDA 11.8. See `environment.json` for the reported server environment.
+
+```bash
+pip install torch==2.1.1 torchvision==0.16.1 --index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements.txt
+```
+
+Install Triton and any selective-scan CUDA extension for your platform separately. The reported environment uses Triton 3.3.0; Windows needs a compatible build.
+
+## Weights
+
+Place the final `last.ckpt` in `weights/`. SHA256:
+`a2f3a84766fb2cd59bf8e2c3d374cfec2aa4dfa0b33d50216b51359e203452f0`.
+Download [`last.ckpt` and its accompanying licences](https://github.com/hmbbsett/UrbanSegNet/releases/tag/chruc-2024-v1.0). The complete DINO-derived checkpoint is distributed under the accompanying DINOv3 License.
+
+For training from scratch, obtain `dinov3_vitl16_pretrain_sat493m-eadcf0ff.pth` from [Meta DINOv3](https://github.com/facebookresearch/dinov3) and place it in `weights/`.
+It is not redistributed here. For inference, the complete final checkpoint supplies the backbone and LoRA parameters.
+
+## Train
+
+Set the training data path in `config.py`, then run from the repository root:
+
+```bash
+python train.py --name abl_4city --cities Beijing,Guangzhou,Wuhan,Hohhot --encoder dinov3 --tau 0.4 --lambda_aux 0.4
+```
+
+Training uses 1024×1024 tiles, eight epochs, batch size 4 and gradient accumulation 8.
+
+## Evaluate
+
+Set `MOSAIC_DIR` in `tools/inference_validate.py`. Put fixed 100×100 reference labels in `<reference_root>/crop_100_masks/`.
+
+```bash
+python tools/inference_validate.py --ckpt weights/last.ckpt --name chruc_30cities --kept_txt evaluation/lists/validation_30cities.txt --gt_dir data/reference --gt_source crop100 --no_guiyang --batch 8
+python tools/inference_validate.py --ckpt weights/last.ckpt --name chruc_guiyang --kept_txt evaluation/lists/validation_guiyang.txt --gt_dir data/reference_guiyang --gt_source crop100 --no_guiyang --batch 8
+```
+
+The 2090-patch, 30-city paper result is OA 84.06% and pooled eight-class mIoU 71.62%.
+Evaluation uses a 1536×1536 context window and the central 100×100 reference area.
+
+## Map cities
+
+Set `MOSAIC_DIR`, `OUTPUT_DIR`, `CKPT_PATH` and `CITIES` in `inference.py`, then run:
+
+```bash
+python inference.py
+```
+
+Production uses 1536×1536 inputs, 1024×1024 output tiles, stride 768 and Gaussian blending. Output is a single-band UInt8 GeoTIFF.
+
+## Data and licenses
+
+The 31-city product and 2314 manual 100×100 reference masks (2090 in 30 cities and 224 in Guiyang) are available from [Figshare](https://doi.org/10.6084/m9.figshare.34764945) under CC BY 4.0.
+Source imagery is obtained separately from [Jilin-1](https://www.jl1mall.com/).
+See `LICENSE`, `NOTICE` and `licenses/` for code and third-party terms.
