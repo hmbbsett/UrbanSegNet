@@ -61,7 +61,6 @@ Production uses 1536×1536 inputs, 1024×1024 output tiles, stride 768 and Gauss
 
 ## Data and licenses
 
-The revised 31-city product and 2360 manual 100×100 reference masks are available from [Figshare](https://doi.org/10.6084/m9.figshare.34436772.v2) under CC BY 4.0.
-The earlier version remains at [Zenodo](https://zenodo.org/records/19510248).
+The 31-city product and 2380 manual 100×100 reference masks are available from [Figshare](https://doi.org/10.6084/m9.figshare.34764945) under CC BY 4.0.
 Source imagery is obtained separately from [Jilin-1](https://www.jl1mall.com/).
 See `LICENSE`, `NOTICE` and `licenses/` for code and third-party terms.
