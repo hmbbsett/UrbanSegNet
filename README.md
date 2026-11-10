@@ -37,17 +37,23 @@ python train.py --name abl_4city --cities Beijing,Guangzhou,Wuhan,Hohhot --encod
 
 Training uses 1024×1024 tiles, eight epochs, batch size 4 and gradient accumulation 8.
 
-## Evaluate
+## Evaluate the final maps
 
-Set `MOSAIC_DIR` in `tools/inference_validate.py`. Put fixed 100×100 reference labels in `<reference_root>/crop_100_masks/`.
+Extract the 2,000-mask reference archive. Its root contains `manifest.csv` and `GT/`. Use the final city GeoTIFFs named `<City>.tif` and run:
 
 ```bash
-python tools/inference_validate.py --ckpt weights/last.ckpt --name chruc_30cities --kept_txt evaluation/lists/validation_30cities.txt --gt_dir data/reference --gt_source crop100 --no_guiyang --batch 8
-python tools/inference_validate.py --ckpt weights/last.ckpt --name chruc_guiyang --kept_txt evaluation/lists/validation_guiyang.txt --gt_dir data/reference_guiyang --gt_source crop100 --no_guiyang --batch 8
+pip install numpy rasterio
+python tools/evaluate_product.py --maps-dir data/31citylabel --reference-dir data/reference
 ```
 
-The 2090-patch, 30-city paper result is OA 84.06% and pooled eight-class mIoU 71.62%.
-Evaluation uses a 1536×1536 context window and the central 100×100 reference area.
+The evaluator reads each 100 × 100 reference window from the final city map and pools the pixel counts across patches. Unclassified product pixels count as errors.
+
+| Scope | Patches | Reference pixels | OA (%) | mPA (%) | mUA (%) | mF1 (%) | mIoU (%) |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| All 31 cities | 2,000 | 20,000,000 | 84.04 | 82.62 | 84.61 | 83.14 | 71.93 |
+| 30-city comparison | 1,973 | 19,730,000 | 84.06 | 82.43 | 84.66 | 83.04 | 71.81 |
+
+`tools/inference_validate.py` and its lists under `evaluation/lists/` are retained for historical single-window experiments.
 
 ## Map cities
 
@@ -61,6 +67,6 @@ Production uses 1536×1536 inputs, 1024×1024 output tiles, stride 768 and Gauss
 
 ## Data and licenses
 
-The 31-city product and 2314 manual 100×100 reference masks (2090 in 30 cities and 224 in Guiyang) are available from [Figshare](https://doi.org/10.6084/m9.figshare.34764945) under CC BY 4.0.
+The CHRUC-2024 dataset consists of the 31 city GeoTIFFs and 2,000 manually labelled reference masks under CC BY 4.0.
 Source imagery is obtained separately from [Jilin-1](https://www.jl1mall.com/).
 See `LICENSE`, `NOTICE` and `licenses/` for code and third-party terms.
